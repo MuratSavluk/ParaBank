@@ -10,7 +10,7 @@ public class Locators extends Parent {
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
-    @FindBy(linkText = "An internal error has occurred and has been logged.")
+    @FindBy(xpath = "//h1[contains(text(),'Error!')]")
     public WebElement error;
     @FindBy(css = "input[name='username']")
     public WebElement logUserName;
@@ -28,6 +28,7 @@ public class Locators extends Parent {
             case "logUserPass":return  this.logUserPass;
             case "logBtn":return  this.logBtn;
             case "succesly":return this.succesly;
+            case "error": return this.error;
         }
         return null;
     }
